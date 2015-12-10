@@ -2,8 +2,9 @@
     <thead>
         <tr>
             <th align='left'><b><a href="/admin/talks?sort=title">Title</a></b></th>
-            <th align='left'><b><a href="/admin/talks?sort=type">Type</a></b></th>
+            <!--th align='left'><b><a href="/admin/talks?sort=type">Type</a></b></th-->
             <th align='left'><b><a href="/admin/talks?sort=category">Category</a></b></th>
+            <th align='left'><b><a href="/admin/talks?sort=level">Level</a></b></th>
             <th align='left'><b><a href="/admin/talks">Created On</a></b></th>
             <th align='left'><b>Submitted by</b></th>
             <th>&nbsp;</th>
@@ -13,8 +14,9 @@
         {% for talk in talks %}
             <tr>
                 <td><a href="{{ url('admin_talk_view', { id: talk.id }) }}">{{ talk.title|raw }}</a></td>
-                <td>{{ talk.type }}</td>
+                <!--td>{{ talk.type }}</td-->
                 <td>{{ talk.category }}</td>
+                <td>{{ talk.level }}</td>
                 <td>{{ talk.created_at|date("F jS Y \\a\\t g:ia T") }}</td>
                 {% if false == talk.user %}
                 <td><em>Unknown User</em></td>
